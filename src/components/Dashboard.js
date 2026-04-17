@@ -20,7 +20,7 @@ function Dashboard({ studentData, onLogout }) {
       fetchData();
     }, 30000);
     return () => clearInterval(interval);
-  }, []);
+  }, [studentData]);
 
   const fetchData = async () => {
     try {
