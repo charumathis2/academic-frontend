@@ -31,10 +31,10 @@ function AdminDashboard({ onLogout }) {
     try {
       const [analyticsRes, leaderboardRes, studentsRes, deadlinesRes] =
         await Promise.all([
-          axios.get("http://localhost:8080/api/admin/analytics"),
-          axios.get("http://localhost:8080/api/admin/leaderboard"),
-          axios.get("http://localhost:8080/api/admin/students"),
-          axios.get("http://localhost:8080/api/admin/deadlines"),
+          axios.get("https://academic-hub-backend-2.onrender.com/api/admin/analytics"),
+          axios.get("https://academic-hub-backend-2.onrender.com/api/admin/leaderboard"),
+          axios.get("https://academic-hub-backend-2.onrender.com/api/admin/students"),
+          axios.get("https://academic-hub-backend-2.onrender.com/api/admin/deadlines"),
         ]);
       setAnalytics(analyticsRes.data);
       setLeaderboard(leaderboardRes.data);
@@ -61,7 +61,7 @@ function AdminDashboard({ onLogout }) {
       if (assignForm.studentId === "all") {
         for (const student of students) {
           await axios.post(
-            "http://localhost:8080/api/deadlines",
+            "https://academic-hub-backend-2.onrender.com/api/deadlines",
             {
               title: assignForm.title,
               description: assignForm.description,
@@ -78,7 +78,7 @@ function AdminDashboard({ onLogout }) {
         );
       } else {
         await axios.post(
-          "http://localhost:8080/api/deadlines",
+          "https://academic-hub-backend-2.onrender.com/api/deadlines",
           {
             title: assignForm.title,
             description: assignForm.description,

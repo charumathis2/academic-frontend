@@ -11,7 +11,7 @@ function Login({ onLoginSuccess, onRegisterClick }) {
     setLoading(true);
     setError("");
     try {
-      const res = await axios.post("http://localhost:8080/api/auth/login", {
+      const res = await axios.post("https://academic-hub-backend-2.onrender.com/api/auth/login", {
         email,
         password,
       });

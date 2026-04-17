@@ -26,11 +26,11 @@ function Dashboard({ studentData, onLogout }) {
     try {
       const [analyticsRes, deadlineRes] = await Promise.all([
         axios.get(
-          `http://localhost:8080/api/analytics/student/${studentData.studentId}`,
+          `https://academic-hub-backend-2.onrender.com/api/analytics/student/${studentData.studentId}`,
           { headers }
         ),
         axios.get(
-          `http://localhost:8080/api/deadlines/student/${studentData.studentId}`,
+          `https://academic-hub-backend-2.onrender.com/api/deadlines/student/${studentData.studentId}`,
           { headers }
         ),
       ]);
@@ -64,7 +64,7 @@ function Dashboard({ studentData, onLogout }) {
   const handleComplete = async (id) => {
     try {
       await axios.put(
-        `http://localhost:8080/api/deadlines/${id}/complete`,
+        `https://academic-hub-backend-2.onrender.com/api/deadlines/${id}/complete`,
         {}, { headers }
       );
       fetchData();

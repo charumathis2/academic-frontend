@@ -17,7 +17,7 @@ function Register({ onRegisterSuccess, onLoginClick }) {
     setError("");
     try {
       const res = await axios.post(
-        "http://localhost:8080/api/auth/register", form
+        "https://academic-hub-backend-2.onrender.com/api/auth/register", form
       );
       if (res.data.success) {
         localStorage.setItem("token", res.data.token);
